@@ -6,13 +6,14 @@ export default class extends Controller {
 
   connect() {
     console.log("connected to payment controller..");
+    this.showAdditionalFields();
   }
 
   showAdditionalFields() {
     const selection = this.selectionTarget.value;
-    // console.log(selection);
+    console.log(selection);
     for (let fields of this.additionalFieldsTargets) {
-      // console.log(fields.dataset.type);
+      console.log(fields.dataset.type);
       fields.disabled = fields.hidden = fields.dataset.type != selection;
     }
   }
